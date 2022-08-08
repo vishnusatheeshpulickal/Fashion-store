@@ -13,17 +13,17 @@
 <div class="cont">
   <div class="form sign-in">
     <h2>Welcome back,</h2>
+    <form method="POST" action="./logics/login.php">
     <label>
       <span>Email</span>
-      <input type="email" />
+      <input type="email" name="email"/>
     </label>
     <label>
       <span>Password</span>
-      <input type="password" />
+      <input type="password" name="password"/>
     </label>
-    <!-- <p class="forgot-pass">Forgot password?</p> -->
-    <button type="button" class="submit">Sign In</button>
-    <!-- <button type="button" class="fb-btn">Connect with <span>facebook</span></button> -->
+    <button type="submit" class="submit" name="log-btn">Sign In</button>
+    </form>
   </div>
   <div class="sub-cont">
     <div class="img">
@@ -40,32 +40,32 @@
         <span class="m--in">Sign In</span>
       </div>
     </div>
+    <form action="./logics/register.php" method="POST">
     <div class="form sign-up">
       <h2>Time to feel like home,</h2>
       <label>
         <span>Name</span>
-        <input type="text" />
+        <input type="text" name="name"/>
       </label>
       <label>
         <span>Email</span>
-        <input type="email" />
+        <input type="email" name="email"/>
+       </label>
+      <label>
+        <span>Phone</span>
+        <input type="phone" name="phone"/>
       </label>
       <label>
         <span>Password</span>
-        <input type="password" />
+        <input type="password" name="password"/>
       </label>
-      <button type="button" class="submit">Sign Up</button>
+      <button type="submit" name="rgt-btn" class="submit">Sign Up</button>
      <!--  <button type="button" class="fb-btn">Join with <span>facebook</span></button> -->
     </div>
+</form>
   </div>
 </div>
 
-<a href="https://dribbble.com/shots/3306190-Login-Registration-form" target="_blank" class="icon-link">
-  <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
-</a>
-<a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
-  <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
-</a>
 
 <style type="text/css">
 	*, *:before, *:after {
