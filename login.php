@@ -60,7 +60,6 @@
         <input type="password" name="password"/>
       </label>
       <button type="submit" name="rgt-btn" class="submit">Sign Up</button>
-     <!--  <button type="button" class="fb-btn">Join with <span>facebook</span></button> -->
     </div>
 </form>
   </div>

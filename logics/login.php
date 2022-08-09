@@ -25,7 +25,8 @@ $run=mysqli_query($con,$query);
      $result = mysqli_fetch_array($run);
      $pwd = $result["password"];
         if(password_verify($password,$pwd)){
-            // $sessionData = array($jsemail,'jobseeker');
+            setcookie("fashionstore",$result['name'],time()+16024000,"/");
+           
             $_SESSION['fashionstore']=$email;
 	          echo "<script> alert('Login Successful')</script>";
            	header("location: ../index.php");
