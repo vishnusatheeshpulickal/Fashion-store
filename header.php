@@ -36,11 +36,11 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="#">Fashion<span>store</span></a>
+							<a href="index.php">Fashion<span>store</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
-								<li><a href="#">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<li><a href="#">shop</a></li>
 								<li><a href="contact.php">contact</a></li>
 							</ul>
@@ -51,7 +51,7 @@
 										<span id="checkout_items" class="checkout_items">0</span>
 									</a></li>
 								<li class="checkout">
-									<a href="#">
+									<a href="cart.php">
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<span id="checkout_items" class="checkout_items">0</span>
 									</a>
