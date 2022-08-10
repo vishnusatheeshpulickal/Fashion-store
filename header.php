@@ -41,7 +41,8 @@
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="index.php">Home</a></li>
-								<li><a href="#">shop</a></li>
+								<li><a href="mens.php">Men</a></li>
+								<li><a href="womens.php">Women</a></li>
 								<li><a href="contact.php">contact</a></li>
 							</ul>
 							<ul class="navbar_user">

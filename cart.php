@@ -17,8 +17,9 @@
 
     <?php require('header.php')?>
 
-<div class="container" style="margin-top:10px;">
+<div class="container" style="margin-top:15px;">
   <h1 style="font-size:30px!important;">Cart</h1>
+  <div class="items">
 <div class="cart-table">
   
  <div class="row cart-row">
@@ -32,26 +33,22 @@
     <div class="product-price">
         <!-- <input type="text" name="quantity[4]" value="1" size="1" class="form-control">
         <button type="submit" data-toggle="tooltip" title="Uppdatera" class="update"><i class="fas fa-sync"></i></button> -->
-        <div class="product-price"><span>1 </span><small>x</small> 49 SEK</div>
+        <div class="product-price"><span>1 </span><small>x</small> Rs.200</div>
     </div>
    </div>
   <div class="col-md-3 cart-actions">
-    <div class="product-price-total">49 SEK</div>
+    <div class="product-price-total">Rs.200</div>
     <div class="product-delete">
-      <button type="button" data-toggle="tooltip" title="Ta bort" class="delete" onclick="cart.remove('5');"><i class="fas fa-times-circle"></i></button>
+      <button type="submit" name="rm-btn" data-toggle="tooltip" title="Ta bort" class="delete"><i class="fas fa-times-circle"></i></button>
       </div>
-  </div>
-</div><!-- cart-row-->
- 
-
-  
+    </div>
+  </div> 
+ </div> 
 </div>
-  
+<div class="pr-btn">
+   <input type="submit" name="prcd-btn" class="prcd-btn" />
 </div>
-
-
-
-
+</div>
 
 </body>
 
@@ -71,5 +68,32 @@
 .cart-special-holder{background:#efefef}
 .cart-special{padding:1em 1em 0;display:block;margin-top:.5em;border-top:1px solid #dadada}
 .cart-special .cart-special-content:before{content:"\21b3";font-size:1.5em;margin-right:1em;color:#6f6f6f;font-family:helvetica,arial,sans-serif}
+.pr-btn{
+    display:flex;
+    justify-content: space-evenly;
+}
+.prcd-btn{
+    padding: 1em 2.1em 1.1em;
+    border-radius: 50em;
+    border:none;
+    margin: 8px 8px 8px 8px;
+    color: white;
+    background-color: #fe4c50;
+    display: inline-block;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: .85em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.prcd-btn:hover{
+    background-color: #d55050;
+}
 </style>
 </html>
