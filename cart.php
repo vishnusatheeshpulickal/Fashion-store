@@ -62,7 +62,7 @@
 .product-price small{color:#666;font-weight:300;font-size:20px;margin:0;padding:0;line-height:initial}
 .cart-table .cart-row input{width:30px;height:auto;padding:2px;border-radius:0;border-color:#000;float:left;font-size:14px;text-align:center}
 .cart-table .cart-row button.update{border:0;padding:7px 8px;background:#000;color:#fff;font-size:9px;float:left;margin-right:5px}
-.cart-table .cart-row button.delete{background-color:#FFB2B2;color:#000!important;padding:7px 13px;font-size:13px;border:0;border-radius:50px}
+.cart-table .cart-row button.delete{background-color:#FFB2B2;color:#000!important;padding:7px 13px;font-size:13px;border:0;border-radius:50px;cursor:pointer;}
 .product-price-total{font-size:16px;font-weight:400;width:80%;float:left}
 .cart-actions{display:flex;justify-content:center;align-items:center}
 .cart-special-holder{background:#efefef}
