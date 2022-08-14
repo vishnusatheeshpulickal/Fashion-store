@@ -41,45 +41,43 @@
     <?php require('header.php')?>
 
 <div class="container" style="margin-top:15px;">
-  <h1 style="font-size:30px!important;">Cart</h1>
-  <div class="items">
-<div class="cart-table">
-  <form method="POST" action="./checkout.php">
-<?php 
-	if(mysqli_num_rows($run)>0)
-    {
-  foreach($datas as $value){
-		echo('<div class="row cart-row">
-   <div class="col-xs-12 col-md-2">
-    <img src="./uploads/'.$value['image'].'" width="100%" alt="Product image">
+  <h1 style="font-size:30px!important;">Checkout</h1>
+  
+  <form action="./logics/checkout-logic.php" method="POST" enctype="multipart/form-data">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="sh-desc">Phone</label>
+      <input type="text" class="form-control" name="phone" id="sh-desc" placeholder="Phone">
+    </div>
   </div>
-  <div class="col-md-6">
-    <div class="product-articlenr">'.$value['product_id'].'</div>
-    <div class="product-name">'.$value['name'].'</div>
-    <div class="product-options"><span>Color:</span> Grey<br><span>Size:</span> M</div>
-    <div class="product-price">
-        <!-- <input type="text" name="quantity[4]" value="1" size="1" class="form-control">
-        <button type="submit" data-toggle="tooltip" title="Uppdatera" class="update"><i class="fas fa-sync"></i></button> -->
-        <div class="product-price"><span>'.$value['qty'].' </span><small>x</small>'.$value['price'].'</div>
-    </div>
-   </div>
-  <div class="col-md-3 cart-actions">
-    <div class="product-price-total">Rs. '.$value['total'].'</div>
-    <div class="product-delete">
-      <button type="submit" name="rm-btn" data-toggle="tooltip" title="Ta bort" class="delete"><i class="fas fa-times-circle"></i></button>
-      </div>
-    </div>
-  </div>');
-  }
-}
-?>
-</div>
-</div>
+  <div class="form-group">
+    <label for="desc">Address</label>
+    <input type="text" class="form-control" name="address" id="desc" placeholder="Address">
+  </div>
 
-<div class="pr-btn">
-   <input type="submit" name="prcd-btn" class="prcd-btn" value="Proceed"/>
-</div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="a-price">District</label>
+      <input type="text" class="form-control" name="district" id="a-price" placeholder="District">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="sh-desc">pincode</label>
+      <input type="text" class="form-control" name="pincode" id="sh-desc" placeholder="Pincode">
+    </div>
+  </div>
+
+  <div class="pr-btn">
+     <input type="submit" name="checkout" class="prcd-btn" value="Check Out"/>
+  </div>
+  <!-- <button type="submit" name="check-out" class="btn btn-primary">Place order</button> -->
 </form>
+
+
 </div>
 
 </body>
