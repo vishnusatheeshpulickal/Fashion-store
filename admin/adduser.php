@@ -11,7 +11,7 @@
 
     <title>Fashionstore - Dashboard</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -27,20 +27,7 @@
  
     <div id="wrapper">
 
-      <?php 
-      include('../logics/connection.php');
-      include('slider.php'); 
-
-      $query="select * from users";
-      $run = mysqli_query($con,$query);
-      $num_rows = mysqli_num_rows($run);
-
-      $datas = array();
-      while($row = mysqli_fetch_assoc($run)){
-      $datas[] = $row;
-     }    
-      ?>
-     
+      <?php include('slider.php'); ?>
       
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -155,55 +142,34 @@
                 <div class="container-fluid">
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Users</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Add User</h1>
                     </div>
 
-                       <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Users Details</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                  <?php
-                                    if(mysqli_num_rows($run)>0)
-                                       {
-                                     foreach($datas as $value){
-                                      echo('<tr>
-                                            <td>'.$value['user_id'].'</td>
-                                            <td>'.$value['name'].'</td>
-                                            <td>'.$value['email'].'</td>
-                                            <td>'.$value['phone'].'</td>
-                                            <td><a href="../logics/deleteuser.php?id='.$value['user_id'].'"><i class="fa-solid fa-trash-can"></i></a></td>
-                                            <td><a href="../logics/edituser.php"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                                        </tr>');
-                                       }
-                                     }
-                                        ?>
-                                
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                   
+<form action="../logics/adduser-logic.php" method="POST" enctype="multipart/form-data">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="sh-desc">Email</label>
+      <input type="text" class="form-control" name="email" id="sh-desc" placeholder="Email">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="a-price">Phone</label>
+      <input type="text" class="form-control" name="phone" id="a-price" placeholder="Phone">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="sh-desc">Password</label>
+      <input type="password" class="form-control" name="password" id="sh-desc" placeholder="Password">
+    </div>
+  </div>
+
+  <button type="submit" name="user-add" class="btn btn-primary">Add</button>
+</form>
 
                 </div>
                
@@ -264,8 +230,6 @@
   
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
-
 
 
 </body>

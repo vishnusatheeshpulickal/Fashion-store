@@ -40,8 +40,8 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="utilities-color.html">Users</a>
-                        <a class="collapse-item" href="utilities-border.html">Add</a>
+                        <a class="collapse-item" href="users.php">Users</a>
+                        <a class="collapse-item" href="adduser.php">Add</a>
                     </div>
                 </div>
             </li>
@@ -55,8 +55,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Orders</a>
-                        <a class="collapse-item" href="register.html">Delivered</a>
+                        <a class="collapse-item" href="">Orders</a>
+                        <a class="collapse-item" href="">Delivered</a>
                     </div>
                 </div>
             </li>
