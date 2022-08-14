@@ -145,41 +145,52 @@
                         <h1 class="h3 mb-0 text-gray-800">Add Product</h1>
                     </div>
 
-<form>
+<form action="../logics/addproduct-logic.php" method="POST" enctype="multipart/form-data">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Product name">
+      <input type="text" class="form-control" name="name" id="name" placeholder="Product name">
     </div>
     <div class="form-group col-md-6">
       <label for="sh-desc">Short description</label>
-      <input type="text" class="form-control" id="sh-desc" placeholder="Product description">
+      <input type="text" class="form-control" name="short_des" id="sh-desc" placeholder="Product description">
     </div>
   </div>
   <div class="form-group">
     <label for="desc">Detailed Description</label>
-    <input type="text" class="form-control" id="desc" placeholder="Detailed Description">
+    <input type="text" class="form-control" name="description" id="desc" placeholder="Detailed Description">
   </div>
 
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="a-price">Actual Price</label>
-      <input type="text" class="form-control" id="a-price" placeholder="Actual Price">
+      <input type="text" class="form-control" name="old_price" id="a-price" placeholder="Actual Price">
     </div>
     <div class="form-group col-md-6">
       <label for="sh-desc">Sale Price</label>
-      <input type="text" class="form-control" id="sh-desc" placeholder="Product description">
+      <input type="text" class="form-control" name="price" id="sh-desc" placeholder="Sale Price">
     </div>
   </div>
 
   <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="a-price">Main Image</label><br/>
+      <input type="file" name="image" id="a-price" placeholder="Actual Price">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="sh-desc">Description image</label><br/>
+      <input type="file" name="desc-img" id="sh-desc" placeholder="Sale Price">
+    </div>
+  </div>
+
+  <!-- <div class="form-row">
        <div class="form-group col-md-6">
        <label class="ml-4">Upload Main image</label><br/>
     <div class="file-input ml-4">
       <input
         type="file"
-        name="main-img"
+        name="image"
         id="file-input"
         class="file-input__input"
       />
@@ -187,9 +198,9 @@
         <span>Upload Image</span></label>
     </div>
  </div>
-</div>
+</div> -->
 
-<div class="form-row">
+<!-- <div class="form-row">
     <div class="form-group col-md-6">
     <label class="ml-4">Upload description image</label><br/>
   <div class="file-input ml-4">
@@ -203,7 +214,7 @@
         <span>Upload Image</span></label>
     </div>
   </div>
- </div>
+ </div> -->
 
 
 
@@ -234,7 +245,7 @@
       </label>
     </div>
   </div> -->
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" name="pro-add" class="btn btn-primary">Add</button>
 </form>
 
                 </div>
@@ -298,32 +309,12 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
 <style>
-    .file-input__input {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-.file-input__label {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  font-size: 14px;
-  padding: 10px 12px;
-  background-color: #4245a8;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
-}
-
-.file-input__label{
-  height: 36px;
-  margin-right: 4px;
+   input::file-selector-button {
+    font-weight: bold;
+    color: dodgerblue;
+    padding: 0.5em;
+    border: thin solid grey;
+    border-radius: 3px;
 }
 
 </style>
