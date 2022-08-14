@@ -34,15 +34,11 @@
     $run=mysqli_query($con,$query);
     $product_details = mysqli_fetch_array($run);
    
-	
 	?>
-
 
 	<div class="container single_product_container" style="margin-top:0!important;">
 		<div class="row">
 			<div class="col">
-
-				<!-- Breadcrumbs -->
 
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
@@ -109,7 +105,7 @@
 							<span id="quantity_value">1</span>
 							<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
 						</div>
-						<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						<div class="red_button add_to_cart_button"><a href="./logics/add_cart.php?pid=<?=$product_details['product_id']?>&redirect=../single.php?id=<?=$product_details['product_id']?>">add to cart</a></div>
 						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
 					</div>
 				</div>
