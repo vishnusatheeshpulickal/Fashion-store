@@ -103,9 +103,9 @@
 						<div class="quantity_selector">
 							<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
 							<span id="quantity_value">1</span>
-							<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+							<span class="plus" onclick="qtyinc();"><i class="fa fa-plus" aria-hidden="true"></i></span>
 						</div>
-						<div class="red_button add_to_cart_button"><a href="./logics/add_cart.php?pid=<?=$product_details['product_id']?>&redirect=../single.php?id=<?=$product_details['product_id']?>">add to cart</a></div>
+						<div class="red_button add_to_cart_button"><a href="./logics/add_cart.php?pid=<?=$product_details['product_id']?>&redirect=../single.php?id=<?=$product_details['product_id']?>&qty=<?=$count?>">add to cart</a></div>
 						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
 					</div>
 				</div>
@@ -231,6 +231,14 @@
  <?php require('footer.php')?>
 
 </div>
+<script> 
+let count = 1
+function qtyinc(){
+	count++;
+	<?php $count = "<script>document.write(count)</script>"?>   
+}
+
+</script>
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>

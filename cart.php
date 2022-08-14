@@ -12,6 +12,29 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+<?php 
+      include('./logics/connection.php');
+
+      if(isset($_SESSION['fashionstore']) && empty($_SESSION['fashionstore'])) {
+     ob_start();
+    header('Location:./login.php ');
+    ob_end_flush();
+    die();
+  }else{
+    $userEmail=$_SESSION["fashionstore"];
+  }
+
+      $query="select * from cart where user_email='$userEmail'";
+      $run = mysqli_query($con,$query);
+      $num_rows = mysqli_num_rows($run);
+
+      $datas = array();
+      while($row = mysqli_fetch_assoc($run)){
+      $datas[] = $row;
+     }    
+      ?>
+
 </head>
 <body>
 
@@ -22,29 +45,37 @@
   <div class="items">
 <div class="cart-table">
   
- <div class="row cart-row">
+<?php 
+	if(mysqli_num_rows($run)>0)
+    {
+  foreach($datas as $value){
+		echo('<div class="row cart-row">
    <div class="col-xs-12 col-md-2">
-    <img src="https://profilewear.se/image/catalog/shop_information/kategori/pw3/T-shirt.png" width="100%">
+    <img src="./uploads/'.$value['image'].'" width="100%" alt="Product image">
   </div>
   <div class="col-md-6">
-    <div class="product-articlenr">#643489</div>
-    <div class="product-name">Basic T-shirt</div>
+    <div class="product-articlenr">'.$value['product_id'].'</div>
+    <div class="product-name">'.$value['name'].'</div>
     <div class="product-options"><span>Color:</span> Grey<br><span>Size:</span> M</div>
     <div class="product-price">
         <!-- <input type="text" name="quantity[4]" value="1" size="1" class="form-control">
         <button type="submit" data-toggle="tooltip" title="Uppdatera" class="update"><i class="fas fa-sync"></i></button> -->
-        <div class="product-price"><span>1 </span><small>x</small> Rs.200</div>
+        <div class="product-price"><span>'.$value['qty'].' </span><small>x</small>'.$value['price'].'</div>
     </div>
    </div>
   <div class="col-md-3 cart-actions">
-    <div class="product-price-total">Rs.200</div>
+    <div class="product-price-total">Rs. '.$value['total'].'</div>
     <div class="product-delete">
       <button type="submit" name="rm-btn" data-toggle="tooltip" title="Ta bort" class="delete"><i class="fas fa-times-circle"></i></button>
       </div>
     </div>
-  </div> 
- </div> 
+  </div>');
+  }
+}
+?>
 </div>
+</div>
+
 <div class="pr-btn">
    <input type="submit" name="prcd-btn" class="prcd-btn" />
 </div>
