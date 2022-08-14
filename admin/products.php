@@ -31,7 +31,7 @@
       include('../logics/connection.php');
       include('slider.php'); 
 
-      $query="select * from product";
+      $query="select * from product where category='Men'";
       $run = mysqli_query($con,$query);
       $num_rows = mysqli_num_rows($run);
 
@@ -169,6 +169,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
+                                            <th>Category</th>
                                             <th>Short Description</th>
                                             <th>Description</th>
                                             <th>Actual price</th>
@@ -181,6 +182,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
+                                            <th>Category</th>
                                             <th>Short Description</th>
                                             <th>Description</th>
                                             <th>Actual price</th>
@@ -197,6 +199,7 @@
                                       echo('<tr>
                                             <td>'.$value['product_id'].'</td>
                                             <td>'.$value['name'].'</td>
+                                            <td>'.$value['category'].'</td>
                                             <td>'.$value['short_des'].'</td>
                                             <td>'.$value['description'].'</td>
                                             <td>'.$value['old_price'].'</td>

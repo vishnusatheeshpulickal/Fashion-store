@@ -173,6 +173,19 @@
     </div>
   </div>
 
+<div class="form-row">
+    <div class="form-group col-md-6">
+          <label for="a-price">Category</label><br/>
+  <select class="custom-select" id="inputGroupSelect01" name="category">
+    <option selected>Choose...</option>
+    <option value="Men">Men</option>
+    <option value="Women">Women</option>
+  </select>
+    </div>
+  </div>
+
+
+
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="a-price">Main Image</label><br/>
@@ -184,6 +197,8 @@
     </div>
   </div>
 
+  
+  
   <!-- <div class="form-row">
        <div class="form-group col-md-6">
        <label class="ml-4">Upload Main image</label><br/>

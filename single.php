@@ -23,7 +23,19 @@
  
 	
 	<div class="fs_menu_overlay"></div>
-	<?php include('header.php'); ?>
+	<?php 
+	include('./logics/connection.php');
+	include('header.php');
+
+	$id = $_GET['id'];
+	
+	 $query="select * from product where product_id='$id'";
+
+    $run=mysqli_query($con,$query);
+    $product_details = mysqli_fetch_array($run);
+   
+	
+	?>
 
 
 	<div class="container single_product_container" style="margin-top:0!important;">
@@ -34,8 +46,8 @@
 
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="categories.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="mens.php"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
 						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Single Product</a></li>
 					</ul>
 				</div>
@@ -58,7 +70,7 @@
 						<!-- </div> -->
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
-								<div class="single_product_image_background" style="background-image:url(images/single_2.jpg)"></div>
+								<div class="single_product_image_background" style="background-image:url(./uploads/<?=$product_details['image']?>)"></div>
 							</div>
 						</div>
 					</div>
@@ -67,14 +79,14 @@
 			<div class="col-lg-5">
 				<div class="product_details">
 					<div class="product_details_title">
-						<h2>Pocket cotton sweatshirt</h2>
-						<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+						<h2><?=$product_details['name']?></h2>
+						<p><?=$product_details['short_des']?></p>
 					</div>
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 						<span class="ti-truck"></span><span>free delivery</span>
 					</div>
-					<div class="original_price">Rs.629.99</div>
-					<div class="product_price">Rs.495.00</div>
+					<div class="original_price">Rs. <?=$product_details['old_price']?></div>
+					<div class="product_price">Rs. <?=$product_details['price']?></div>
 					<ul class="star_rating">
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -132,18 +144,13 @@
 									<h4>Description</h4>
 								</div>
 								<div class="tab_text_block">
-									<h2>Pocket cotton sweatshirt</h2>
-									<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...
-										Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...
-										Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...
-										Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...
-										Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...
-									</p>
+									<h2><?=$product_details['name']?></h2>
+									<p><?=$product_details['description']?></p>
 								</div>
 							</div>
 							<div class="col-lg-5 offset-lg-2 desc_col">
 								<div class="tab_image">
-									<img src="images/single_2.jpg" alt="">
+									<img src="./uploads/<?=$product_details['desc_image']?>" alt="Description image">
 								</div>
 							</div>
 						</div>
