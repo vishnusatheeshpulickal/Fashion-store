@@ -62,7 +62,7 @@
 							<div class="col">
 
 								<div class="product-grid">
-									
+
                                  <?php 
 								 if(mysqli_num_rows($run)>0)
                              {
@@ -71,7 +71,7 @@
 									<div class="product-item men">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="./uploads/'.$value['image'].'" alt="product image">
+												<img src="./uploads/'.$value['image'].'" alt="product image" height=221px width=226px>
 											</div>
 											<div class="favorite favorite_left"></div>
 											<!-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div> -->

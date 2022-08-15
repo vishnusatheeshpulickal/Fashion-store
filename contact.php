@@ -31,7 +31,7 @@
 
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a></li>
 					</ul>
 				</div>
@@ -50,7 +50,7 @@
 						<p>vishnusatheeshpulickalprojects@gmail.com</p>
 					</div>
 					<div>
-						<p>mm</p>
+						<p></p>
 					</div>
 					<div>
 						<p>Open hours: 8.00-18.00 Mon-Fri</p>
@@ -75,7 +75,7 @@
 				<div class="get_in_touch_contents">
 					<h1>Get In Touch With Us!</h1>
 					<p>Fill out the form below to recieve a free and confidential.</p>
-					<form action="post">
+					<form action="post" action="">
 						<div>
 							<input id="input_name" class="form_input input_name input_ph" type="text" name="name" placeholder="Name" required="required" data-error="Name is required.">
 							<input id="input_email" class="form_input input_email input_ph" type="email" name="email" placeholder="Email" required="required" data-error="Valid email is required.">
