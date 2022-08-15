@@ -309,8 +309,10 @@ if(!isset($_SESSION['fashionstore-admin']) && empty($_SESSION['fashionstore-admi
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
+                     <form action="../logics/admin-logout.php" method="POST">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="adminlogin.php">Logout</a>
+                    <button class="btn btn-primary" type="submit">Logout</button>
+                    </form>
                 </div>
             </div>
         </div>
