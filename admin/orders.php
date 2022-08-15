@@ -29,6 +29,14 @@
 
       <?php 
       include('../logics/connection.php');
+
+if(!isset($_SESSION['fashionstore-admin']) && empty($_SESSION['fashionstore-admin'])) {
+     ob_start();
+    header('Location:./login.php ');
+    ob_end_flush();
+    die();
+  }
+
       include('slider.php'); 
 
       $query="select * from purchase where status='Not Delivered'";

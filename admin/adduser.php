@@ -28,6 +28,16 @@
     <div id="wrapper">
 
       <?php include('slider.php'); ?>
+
+      <?php
+    include('../logics/connection.php');
+if(!isset($_SESSION['fashionstore-admin']) && empty($_SESSION['fashionstore-admin'])) {
+     ob_start();
+    header('Location:./login.php ');
+    ob_end_flush();
+    die();
+  }
+    ?>
       
         <div id="content-wrapper" class="d-flex flex-column">
 
